@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<robot name="demo_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find demo_rover_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find demo_rover_description)/urdf/demo_rover.trans" />
+<xacro:include filename="$(find demo_rover_description)/urdf/demo_rover.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.005837942586806629 -4.853221859138213e-05 0.18978110455710276" rpy="0 0 0"/>
+    <mass value="95.33842627384524"/>
+    <inertia ixx="2.707855" iyy="3.514635" izz="4.770347" ixy="2.7e-05" iyz="-0.000415" ixz="0.077055"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_behind_1">
+  <inertial>
+    <origin xyz="5.551115123125783e-17 0.025000000000000078 0.0" rpy="0 0 0"/>
+    <mass value="1.813091660203009"/>
+    <inertia ixx="0.004049" iyy="0.007343" izz="0.004049" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.2 0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/right_wheel_behind_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.2 0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/right_wheel_behind_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_front_1">
+  <inertial>
+    <origin xyz="5.551115123125783e-17 0.025000000000000022 0.0" rpy="0 0 0"/>
+    <mass value="1.813091660203009"/>
+    <inertia ixx="0.004049" iyy="0.007343" izz="0.004049" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2 0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/right_wheel_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2 0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/right_wheel_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_front_1">
+  <inertial>
+    <origin xyz="5.551115123125783e-17 -0.02499999999999991 0.0" rpy="0 0 0"/>
+    <mass value="1.813091660203009"/>
+    <inertia ixx="0.004049" iyy="0.007343" izz="0.004049" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.2 -0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/left_wheel_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.2 -0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/left_wheel_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_behind_1">
+  <inertial>
+    <origin xyz="3.0531133177191805e-16 -0.024999999999999967 -5.551115123125783e-17" rpy="0 0 0"/>
+    <mass value="1.813091660203009"/>
+    <inertia ixx="0.004049" iyy="0.007343" izz="0.004049" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.2 -0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/left_wheel_behind_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.2 -0.3 -0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/left_wheel_behind_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="2.7755575615628914e-17 9.650038500203382e-18 0.015000000000000013" rpy="0 0 0"/>
+    <mass value="0.3251548396465435"/>
+    <inertia ixx="0.000228" iyy="0.000228" izz="0.000406" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.16 -0.0 -0.39" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.16 -0.0 -0.39" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://demo_rover_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="-0.2 -0.3 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_behind_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 2" type="continuous">
+  <origin xyz="0.2 -0.3 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_front_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.2 0.3 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_front_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 4" type="continuous">
+  <origin xyz="-0.2 0.3 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_behind_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="-0.16 0.0 0.39" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
